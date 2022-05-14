@@ -6,15 +6,16 @@ import {
 
 const Footer = () => {
   return (
-    <Stack direction="row" spacing={4}>
-      <Button  colorScheme="teal" variant="solid">
-        Email
+    <Stack direction="row" spacing={4} borderWidth='thin' width='full' p='2' borderRadius='md' justifyContent='space-between'>
+      <Button  colorScheme="blue" variant="solid" w='36'>
+        Previous
       </Button>
       <Button
-        colorScheme="teal"
-        variant="outline"
+        colorScheme="blue"
+        variant="solid"
+        w='36'
       >
-        Call us
+        Next
       </Button>
     </Stack>
   );
