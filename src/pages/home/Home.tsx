@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   VStack,
   SimpleGrid,
@@ -14,7 +13,6 @@ const Home = () => {
   const { loading, data, fetchMore } = useQuery(GET_PEOPLES);
   const peopleData = data?.people as IPeoples;
   const colSpan = useBreakpointValue({ base: 3, md: 1 });
-  console.log(peopleData);
 
   const handlePagination = (offset: number) => {
     fetchMore({
@@ -37,8 +35,8 @@ const Home = () => {
       direction={["column", "row"]}
     >
       <SimpleGrid columns={3} columnGap={3} rowGap={6} w="full">
-        {peopleData?.peoples.map((item: IPeople) => (
-          <GridItem colSpan={colSpan}>
+        {peopleData?.peoples.map((item: IPeople, index: number) => (
+          <GridItem colSpan={colSpan} key={index}>
             <People
               name={item.name}
               gender={item.gender}
