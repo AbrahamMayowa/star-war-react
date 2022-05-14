@@ -21,27 +21,8 @@ const Search = () => {
       direction={["column", "row"]}
     >
       <SimpleGrid columns={3} columnGap={3} rowGap={6} w="full">
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
-        <GridItem colSpan={colSpan}>
-          <People name="mayowa" gender="Male" />
-        </GridItem>
+        
+        
       </SimpleGrid>
       
       </ VStack >
