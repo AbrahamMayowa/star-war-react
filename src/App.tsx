@@ -8,31 +8,35 @@ import {
   Code,
   Grid,
   theme,
+  Container,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
+import { Home } from "./pages/home"
+import { Details } from "./pages/peopleDetails"
+import { Search } from "./pages/search"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Header } from "./components"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+        <Container maxW="container.xl" p={0}>
+      <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
+    <Header />
+    <Router>
+        <Routes>
+        
+        <Route path="people" element={<Details />} />
+        <Route path="search" element={< Search/>} />
+        <Route path="/" element={<Home />}>
+        </Route>
+        </Routes>
+    </Router>
+    </VStack>
+    </Container>
   </ChakraProvider>
 )
