@@ -6,6 +6,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { People } from "../../components";
+import Footer from './Footer';
 const Home = () => {
   const colSpan = useBreakpointValue({ base: 3, md: 1 });
   return (
@@ -40,6 +41,8 @@ const Home = () => {
           <People name="mayowa" gender="Male" />
         </GridItem>
       </SimpleGrid>
+
+      <Footer />
     </VStack>
   );
 };

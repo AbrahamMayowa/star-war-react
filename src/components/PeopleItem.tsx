@@ -4,10 +4,10 @@ import { PeopleProp } from "./types";
 
 const People = ({ name, gender }: PeopleProp) => {
   return (
-    <Box p={5} shadow="md" borderWidth="1px" height='52' _hover = { { transform: "scale(1.02)" } } >
+    <Center p={5} shadow="md" borderWidth="1px" height='52' _hover = { { transform: "scale(1.02)" } } borderRadius='lg' flexDirection='column'>
       <Heading fontSize="xl">{name}</Heading>
       <Text mt={4}>{gender}</Text>
-    </Box>
+    </Center>
   );
 };
 
