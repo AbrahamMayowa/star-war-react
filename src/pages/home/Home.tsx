@@ -7,7 +7,11 @@ import {
 } from "@chakra-ui/react";
 import { People } from "../../components";
 import Footer from './Footer';
+import { useQuery } from "@apollo/client";
+import { GET_PEOPLES} from "../../store";
 const Home = () => {
+    const { loading, error, data } = useQuery(GET_PEOPLES);
+    console.log(data, error, loading)
   const colSpan = useBreakpointValue({ base: 3, md: 1 });
   return (
     <VStack

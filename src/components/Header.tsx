@@ -1,12 +1,4 @@
-import React from "react";
-import { Heading } from "@chakra-ui/layout";
 import {
-  Flex,
-  Container,
-  VStack,
-  Text,
-  AspectRatio,
-  Icon,
   HStack,
   Image,
   InputGroup,
