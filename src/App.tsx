@@ -10,7 +10,7 @@ import { NAVIGATION } from "./constants";
 
 export const App = () => {
   const client = new ApolloClient({
-    uri: 'https://gd1xi6lbxi.execute-api.us-east-1.amazonaws.com/dev/graphql',
+    uri: process.env.REACT_APP_GRAPHQL_URL,
     cache: new InMemoryCache()
   });
   return (
