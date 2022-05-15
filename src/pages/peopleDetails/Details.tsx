@@ -1,30 +1,27 @@
-import {
-  Heading,
-  HStack,
-  VStack,
-  Text,
-} from "@chakra-ui/react";
+import { Heading, HStack, VStack, Text } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 
 const Details = () => {
+  const { state } = useLocation() as any;
   return (
     <VStack w="full" h="full" p={10} spacing={6} align="flex-start">
       <VStack alignItems="flex-start" spacing={3}>
-        <Heading size="2xl">Your cart</Heading>
-        <Text color='gray.500'>If the price is too hard on your eyes, </Text>
+        <Heading size="2xl">{state.name}</Heading>
+        <Text color="gray.500">{state.homeworld}</Text>
       </VStack>
-      
+
       <VStack spacing={4} alignItems="stretch" w="full">
         <HStack justifyContent="space-between">
-          <Text >Subtotal</Text>
-          <Heading size="sm">$119.00</Heading>
+          <Text>Gender</Text>
+          <Heading size="sm">{state.gender}</Heading>
         </HStack>
         <HStack justifyContent="space-between">
-          <Text >Shipping</Text>
-          <Heading size="sm">$19.99</Heading>
+          <Text>Height</Text>
+          <Heading size="sm">{state.height}</Heading>
         </HStack>
         <HStack justifyContent="space-between">
-          <Text >Taxes (estimated)</Text>
-          <Heading size="sm">$23.80</Heading>
+          <Text>Mass</Text>
+          <Heading size="sm">{state.mass}</Heading>
         </HStack>
       </VStack>
     </VStack>
