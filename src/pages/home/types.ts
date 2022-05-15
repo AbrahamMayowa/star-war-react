@@ -17,4 +17,5 @@ export interface IFooterProps {
     handlePagination: Function;
     next: number | null;
     prev: number | null;
+    offset: number;
 }
