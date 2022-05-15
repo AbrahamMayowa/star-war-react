@@ -10,15 +10,15 @@ import { useQuery } from "@apollo/client";
 import { GET_PEOPLES } from "../../store";
 import { IPeoples, IPeople } from "./types";
 const Home = () => {
-  const { loading, data, fetchMore } = useQuery(GET_PEOPLES);
+  const { loading, data, refetch } = useQuery(GET_PEOPLES, {
+    notifyOnNetworkStatusChange: true
+  });
   const peopleData = data?.people as IPeoples;
   const colSpan = useBreakpointValue({ base: 3, md: 1 });
 
   const handlePagination = (offset: number) => {
-    fetchMore({
-      variables: {
-        offset,
-      },
+    refetch({
+      offset,
     });
   };
 
@@ -48,7 +48,7 @@ const Home = () => {
         ))}
       </SimpleGrid>
 
-      <Footer handlePagination={handlePagination} next={peopleData.next} />
+      <Footer handlePagination={handlePagination} next={peopleData.next} prev={peopleData.prev} />
     </VStack>
   );
 };

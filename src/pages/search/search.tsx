@@ -5,7 +5,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { People, Loader } from "../../components";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../../store";
 import { IPeople } from "../home/types";

@@ -8,6 +8,7 @@ export interface IPeople {
 
 export interface IPeoples {
     count: string;
+    prev: number | null;
     next: number | null;
     peoples: IPeople[];
 }
@@ -15,4 +16,5 @@ export interface IPeoples {
 export interface IFooterProps {
     handlePagination: Function;
     next: number | null;
+    prev: number | null;
 }

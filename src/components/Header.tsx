@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import starwarLogo from "../assets/images/starwar.svg";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { NAVIGATION } from "../constants";
 
 const Header = () => {
