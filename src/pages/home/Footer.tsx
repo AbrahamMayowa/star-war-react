@@ -1,7 +1,7 @@
 import { Stack, Button } from "@chakra-ui/react";
 import { IFooterProps } from "./types";
 
-const Footer = ({ handlePagination, next, prev }: IFooterProps) => {
+const Footer = ({ handlePagination, next, prev, offset }: IFooterProps) => {
   let disabledPrev = true;
   let disabledNext = true;
   if (next) {
@@ -27,7 +27,7 @@ const Footer = ({ handlePagination, next, prev }: IFooterProps) => {
         variant="solid"
         w="36"
         disabled={disabledPrev}
-        onClick={() => handlePagination(prev)}
+        onClick={() => handlePagination(offset-1)}
       >
         Previous
       </Button>

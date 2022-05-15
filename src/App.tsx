@@ -1,17 +1,17 @@
-import * as React from "react";
 import { ChakraProvider, VStack, theme, Container } from "@chakra-ui/react";
 import { Home } from "./pages/home";
 import { Details } from "./pages/peopleDetails";
 import { Search } from "./pages/search";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header } from "./components";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider,  } from "@apollo/client";
 import { NAVIGATION } from "./constants";
+
 
 export const App = () => {
   const client = new ApolloClient({
     uri: process.env.REACT_APP_GRAPHQL_URL,
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache()
   });
   return (
     <ChakraProvider theme={theme}>
