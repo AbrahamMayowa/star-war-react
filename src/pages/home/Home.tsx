@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   VStack,
   SimpleGrid,
@@ -11,16 +10,15 @@ import { useQuery } from "@apollo/client";
 import { GET_PEOPLES } from "../../store";
 import { IPeoples, IPeople } from "./types";
 const Home = () => {
-  const { loading, data, fetchMore } = useQuery(GET_PEOPLES);
+  const { loading, data, refetch } = useQuery(GET_PEOPLES, {
+    notifyOnNetworkStatusChange: true
+  });
   const peopleData = data?.people as IPeoples;
   const colSpan = useBreakpointValue({ base: 3, md: 1 });
-  console.log(peopleData);
 
   const handlePagination = (offset: number) => {
-    fetchMore({
-      variables: {
-        offset,
-      },
+    refetch({
+      offset,
     });
   };
 
@@ -37,8 +35,8 @@ const Home = () => {
       direction={["column", "row"]}
     >
       <SimpleGrid columns={3} columnGap={3} rowGap={6} w="full">
-        {peopleData?.peoples.map((item: IPeople) => (
-          <GridItem colSpan={colSpan}>
+        {peopleData?.peoples.map((item: IPeople, index: number) => (
+          <GridItem colSpan={colSpan} key={index}>
             <People
               name={item.name}
               gender={item.gender}
@@ -50,7 +48,7 @@ const Home = () => {
         ))}
       </SimpleGrid>
 
-      <Footer handlePagination={handlePagination} next={peopleData.next} />
+      <Footer handlePagination={handlePagination} next={peopleData.next} prev={peopleData.prev} />
     </VStack>
   );
 };

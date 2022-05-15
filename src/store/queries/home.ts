@@ -12,6 +12,7 @@ export const GET_PEOPLES = gql`
       }
       count
       next
+      prev
     }
   }
 `;
