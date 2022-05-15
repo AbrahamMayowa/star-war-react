@@ -4,6 +4,7 @@ import { PeopleProp } from "./types";
 import { useNavigate } from "react-router-dom";
 import { NAVIGATION } from "../constants";
 
+
 const People = ({ name, gender, height, mass, homeworld }: PeopleProp) => {
   const navigate = useNavigate();
 
