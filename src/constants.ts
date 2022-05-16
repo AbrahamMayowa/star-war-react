@@ -1,4 +1,4 @@
 export const NAVIGATION = {
-    people: 'people',
-    search: 'search'
+    people: '/people',
+    search: '/search'
 }
