@@ -10,8 +10,7 @@ const People = ({ name, gender, height, mass, homeworld }: PeopleProp) => {
 
   const handleNavigation = () => {
     navigate(NAVIGATION.people, {
-      state: { name, gender, height, mass, homeworld },
-      replace: false,
+      state: { name, gender, height, mass, homeworld }
     });
   };
   return (

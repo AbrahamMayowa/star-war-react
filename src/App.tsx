@@ -23,7 +23,7 @@ export const App = () => {
               <Routes>
                 <Route path={NAVIGATION.people} element={<Details />} />
                 <Route path={NAVIGATION.search} element={<Search />} />
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Home />} />
               </Routes>
             </Router>
           </VStack>
